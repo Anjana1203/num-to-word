@@ -1,0 +1,64 @@
+.converter{
+    text-align: center;
+}
+h2{
+    color: #1875f0;
+}
+.numToWord{
+    font-family: sans-serif;
+    border: 1px solid #eee;
+    box-shadow: 0 0.25em 0.75em rgba(60, 60, 60, .5);
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 50px;
+    text-align: center;
+    height: 425px;
+}
+input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 7px;
+    width: 400px;
+    color: #3c3c3c;
+    outline: none;
+}
+input:focus{
+    border: 1px solid #1875f0;
+}
+form {
+    margin: 100px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.resultBox{
+    text-align: left;
+    margin: 100px;
+    margin-top: 45px;
+}
+#result{
+ margin-left: 20px;
+}
+.searchButton input{
+    border-radius: 5px;
+    border: 1px solid #1875f0;
+    background-color: rgb(24, 117, 240);
+    color: #fff;
+    font-weight: 800;
+    width: 170px;
+    padding: 6px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    outline: none;
+}
+.searchButton input:active{
+    border: 1px solid #0835a0;
+    background-color: #0835a0;
+}
+.searchButton input:hover{
+    box-shadow: 0 0.25em 0.75em rgba(0, 156, 255, .5);
+}
+.searchButton{
+    text-align: right;
+    margin-top: 35px;
+    margin-right: 80px;
+}

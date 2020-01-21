@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'/>
+	<title>Assignment</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel='stylesheet' href='static/css/styles.css'/>
+</head>
+<body>
+	<div class="converter">
+		<div class="numToWord">
+			<h2>Number to Word converter</h2>
+			<form id="form">
+				<div>
+					<label>Number:</label>
+					<input id="number" name="number" type="text" onkeypress="javascript:return isNumber(event)">
+				</div>
+				<div class="searchButton">
+					<input type="submit" value="Submit">
+				</div>
+			</form>
+			<div class="resultBox">
+				<h3>Result:</h3>
+				<p id="result"><p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+    // VALIDATION SCRIPT.
+    function isNumber(evt) {
+        var iKeyCode = (evt.which) ? evt.which : evt.keyCode;
+        if (iKeyCode !== 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+            return false;
+
+        return true;
+    }
+
+    $("#form").submit(function(e) {
+    	e.preventDefault();
+    	document.getElementById("result").innerHTML = '';
+    	var dot = '.';
+    	var formData = $("#form").serializeArray();
+    	if (formData[0].value.indexOf(dot) === -1){
+            $.ajax({
+			type: "POST",
+			url: "/",
+			data: $("#form").serialize(), // serializes the form's elements
+			success: function(data)
+			{
+			  document.getElementById("result").innerHTML = data.result;
+			}
+			});
+
+        }
+        else{
+        	document.getElementById("result").innerHTML = 'Please enter a positive integer';
+        }
+
+  	});
+
+
+
+
+</script>
